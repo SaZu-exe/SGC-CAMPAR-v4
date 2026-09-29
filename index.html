@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#241a14" />
+  <title>CAMPAR SGC Digital v0.4</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="loginView" class="login-shell">
+    <section class="login-panel">
+      <img src="assets/logo-campar.png" alt="CAMPAR Comercializadora" class="login-logo" />
+      <div class="login-kicker">CAMPAR SGC DIGITAL · v0.4</div>
+      <h1>Sistema de Gestión y Control Operativo</h1>
+      <p>Prototipo de presentación con seguimiento por producto, aserradero, etapa de producción e inspección.</p>
+      <form id="loginForm" class="login-form">
+        <label for="emailInput">Usuario</label>
+        <input id="emailInput" type="email" value="esmeralda@campar.local" autocomplete="username" />
+        <label for="passwordInput">Contraseña</label>
+        <input id="passwordInput" type="password" value="campar-demo" autocomplete="current-password" />
+        <button class="btn primary full" type="submit">Ingresar</button>
+      </form>
+      <div class="login-note">Versión demostrativa. La información operativa de ejemplo no sustituye los registros oficiales del SGC.</div>
+    </section>
+    <section class="login-visual" aria-hidden="true">
+      <div class="login-visual-content">
+        <span>CONTROL OPERATIVO</span>
+        <h2>Una vista ejecutiva de producción, inventario e inspección.</h2>
+        <p>OC → Producción → Limpios → Inspección → Liberación / NC → Entrega</p>
+      </div>
+    </section>
+  </div>
+
+  <div id="app" class="app hidden">
+    <aside class="sidebar">
+      <div class="sidebar-brand">
+        <div class="brand-logo"><img src="assets/logo-campar.png" alt="CAMPAR" /></div>
+        <div class="brand-copy"><strong>CAMPAR</strong><span>SGC DIGITAL</span></div>
+      </div>
+
+      <nav id="nav" class="nav">
+        <button class="nav-item active" data-page="dashboard"><span class="nav-mark">⌂</span><span>Inicio</span></button>
+        <button class="nav-item" data-page="orders"><span class="nav-mark">▣</span><span>Órdenes de compra</span></button>
+        <button class="nav-item" data-page="production"><span class="nav-mark">▤</span><span>Producción</span></button>
+        <button class="nav-item" data-page="inventory"><span class="nav-mark">▦</span><span>Inventario</span></button>
+        <button class="nav-item" data-page="inspections"><span class="nav-mark">✓</span><span>Inspecciones</span></button>
+        <button class="nav-item" data-page="deliveries"><span class="nav-mark">▰</span><span>Entregas</span></button>
+        <button class="nav-item" data-page="ncs"><span class="nav-mark">△</span><span>No conformidades</span></button>
+        <button class="nav-item" data-page="suppliers"><span class="nav-mark">◇</span><span>Aserraderos</span></button>
+        <button class="nav-item" data-page="products"><span class="nav-mark">◫</span><span>Productos</span></button>
+        <div class="nav-divider"></div>
+        <button class="nav-item" data-page="sgc"><span class="nav-mark">◎</span><span>SGC</span></button>
+        <button class="nav-item" data-page="documents"><span class="nav-mark">▧</span><span>Documentación</span></button>
+        <button class="nav-item" data-page="pilot"><span class="nav-mark">◉</span><span>Piloto 1</span></button>
+      </nav>
+
+      <div class="sidebar-footer">
+        <span>Digital v0.4</span>
+        <button id="logoutBtn" class="text-btn">Cerrar sesión</button>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div>
+          <div class="top-kicker">CAMPAR · SISTEMA DE GESTIÓN Y CONTROL OPERATIVO</div>
+          <h2 id="pageTitle">Dashboard</h2>
+        </div>
+        <div class="top-actions">
+          <button class="btn executive" onclick="openExecutive()">Vista Dirección</button>
+          <div class="user-chip">
+            <div class="avatar">ES</div>
+            <div><strong>Esmeralda</strong><span>Administración</span></div>
+          </div>
+        </div>
+      </header>
+      <section id="content" class="content"></section>
+    </main>
+  </div>
+
+  <div id="modalRoot"></div>
+  <script src="app.js"></script>
+</body>
+</html>
